@@ -92,6 +92,11 @@ typedef NS_ENUM(NSInteger, MXParallaxHeaderMode) {
  */
 @property (nonatomic,readonly) CGFloat progress;
 
+/**
+ Off by default, header should stick to the top of the window with its minimum size. If on - header goes up with scrolling after reach minimum size
+ */
+@property (nonatomic) BOOL scrollUpWhenSizeMinimized;
+
 @end
 
 /**
@@ -104,7 +109,7 @@ typedef NS_ENUM(NSInteger, MXParallaxHeaderMode) {
 /**
  Tells the header view that the parallax header did scroll.
  The view typically implements this method to obtain the change in progress from parallaxHeaderView.
-
+ 
  @param parallaxHeader The parallax header that scrolls.
  */
 - (void)parallaxHeaderDidScroll:(MXParallaxHeader *)parallaxHeader;
